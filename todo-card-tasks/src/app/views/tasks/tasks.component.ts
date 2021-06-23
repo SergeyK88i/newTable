@@ -21,7 +21,7 @@ export class TasksComponent implements OnInit {
 
     @Output()
     deleteTask = new EventEmitter<Task>(); // удаление задачи
-    @ViewChild(MatSort, {static: false}) private sort: MatSort;
+    @ViewChild(MatSort) private sort: MatSort;
     @Output()
     updateTask = new EventEmitter<Task>(); // обновление задачи
 
@@ -39,7 +39,7 @@ export class TasksComponent implements OnInit {
     @Input()
     selectedCategory: Category;
     // ссылки на компоненты таблицы (должны присваиваться после обновления данных в таблице)
-    @ViewChild(MatPaginator, {static: false}) private paginator: MatPaginator;
+    @ViewChild(MatPaginator) private paginator: MatPaginator;
     private dataSource: MatTableDataSource<Task>; // контейнер - источник данных для таблицы
 
     // текущие задачи для отображения на странице
